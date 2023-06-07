@@ -1,0 +1,124 @@
+{
+    "name": "Actions",
+    "maps": [
+        {
+            "name": "gameplay",
+            "id": "1cf12110-6b4b-48cb-8ebf-3ae83cddd9b0",
+            "actions": [
+                {
+                    "name": "move",
+                    "type": "Value",
+                    "id": "9b2fc932-bc60-456c-ad30-8e2405f5dfed",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "CustomHolding(duration=0.01)",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "jump",
+                    "type": "Button",
+                    "id": "1b69c7fc-23b8-4593-aa6a-220f2e5e57ff",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "defaultInteract",
+                    "type": "Button",
+                    "id": "d36b1895-d977-4699-9b86-a5074798237a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "1D Axis",
+                    "id": "88d35b67-1fdc-4a5a-8f41-7abc9a5ba1b6",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "309d0ea8-1a08-4fba-849e-532bc230d4b0",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "38c48876-eb62-4c7f-ad46-0179901b8226",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "18a13f32-b733-463f-9939-bea9f41b37fb",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d176dd6c-4df5-4b0c-9b2e-9c8a70e22d06",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "defaultInteract",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "ui",
+            "id": "dafbbb24-04e7-4155-9621-5d5a09a6dc4e",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "f3bd73ee-125f-42e5-8519-ecc8fafcd8d3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "acc58b7e-79a6-4c85-82e8-9aff0351ec18",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
