@@ -38,7 +38,7 @@ public class PlayerInteractionHandler : MonoBehaviour
     {
         foreach(InteractionDefinition interaction in _availableInteractions)
         {
-            if (interaction.IsInteractionPossible(this))
+            if (interaction.IsInteractionPossible(this) && interaction.GetOwner().GetIsUsable())
             {
                 if (!_possibleInteractions.Contains(interaction))
                 {
@@ -95,6 +95,7 @@ public class PlayerInteractionHandler : MonoBehaviour
                     _tickTime = 0.0f;
                     stageTickMethod = null;
                     stageEndMethod = null;
+                    _currentInteraction.GetOwner().SetIsUsable(true);
                     SetCurrentInteraction(null);
                     break;
                 }

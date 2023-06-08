@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Interactor : MonoBehaviour
+public class InteractionLock : MonoBehaviour
 {
 
     private bool _isUsable;
@@ -14,7 +14,7 @@ public class Interactor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetIsUsable(false);
+        SetIsUsable(true);
 
         foreach (InteractionDefinition interaction in _interactions)
         {
