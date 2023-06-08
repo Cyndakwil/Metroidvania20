@@ -7,7 +7,7 @@ using UnityEngine;
 public class InteractionZone : MonoBehaviour
 {
     public Collider2D _triggerZone;
-    public List<Interactor> _interactors;
+    public List<InteractionLock> _interactionLocks;
 
     private PlayerInteractionHandler _overlappingPlayer;
 
@@ -16,9 +16,9 @@ public class InteractionZone : MonoBehaviour
     {
         _overlappingPlayer = null;
 
-        foreach (Interactor interactor in _interactors)
+        foreach (InteractionLock interactionLock in _interactionLocks)
         {
-            interactor.SetOwner(this);
+            interactionLock.SetOwner(this);
         }
     }
 
@@ -30,9 +30,9 @@ public class InteractionZone : MonoBehaviour
         if (playerInteractionHandler)
         {
             _overlappingPlayer = playerInteractionHandler;
-            foreach(Interactor interactor in _interactors)
+            foreach(InteractionLock interactionLock in _interactionLocks)
             {
-                foreach (InteractionDefinition interaction in interactor._interactions)
+                foreach (InteractionDefinition interaction in interactionLock._interactions)
                 {
                     playerInteractionHandler.AddAvailableInteraction(interaction);
                 }
@@ -48,9 +48,9 @@ public class InteractionZone : MonoBehaviour
         if (playerInteractionHandler)
         {
             _overlappingPlayer = null;
-            foreach (Interactor interactor in _interactors)
+            foreach (InteractionLock interactionLock in _interactionLocks)
             {
-                foreach (InteractionDefinition interaction in interactor._interactions)
+                foreach (InteractionDefinition interaction in interactionLock._interactions)
                 {
                     playerInteractionHandler.RemoveAvailableInteraction(interaction);
                 }
@@ -58,11 +58,11 @@ public class InteractionZone : MonoBehaviour
         }
     }
 
-    void SetInteractorsUsable(bool usable)
+    void SetInteractionLocksUsable(bool usable)
     {
-        foreach (Interactor interactor in _interactors)
+        foreach (InteractionLock interactionLock in _interactionLocks)
         {
-            interactor.SetIsUsable(usable);
+            interactionLock.SetIsUsable(usable);
         }
     }
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Interactor))]
+[RequireComponent(typeof(InteractionLock))]
 public class InteractionDefinition : MonoBehaviour
 {
     public InputActionReference _inputType;
@@ -29,7 +29,7 @@ public class InteractionDefinition : MonoBehaviour
     [InspectorName("Length")]
     public float _exitLength = 0.0f;
 
-    private Interactor _owner;
+    private InteractionLock _owner;
 
     // Start is called before the first frame update
     void Start()
@@ -62,12 +62,12 @@ public class InteractionDefinition : MonoBehaviour
         return isPossible;
     }
 
-    public Interactor GetOwner()
+    public InteractionLock GetOwner()
     {
         return _owner;
     }
 
-    public void SetOwner(Interactor newOwner)
+    public void SetOwner(InteractionLock newOwner)
     {
         _owner = newOwner;
     }
@@ -82,6 +82,7 @@ public class InteractionDefinition : MonoBehaviour
             Debug.Log("Player performed " + ctx.action + "input on " + gameObject.name);
 
             player.SetCurrentInteraction(this);
+            _owner.SetIsUsable(false);
 
             OnInteractionEnterStart(player);
         }
